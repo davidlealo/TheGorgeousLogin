@@ -4,7 +4,7 @@ import 'package:the_gorgeous_login/theme.dart';
 import 'package:the_gorgeous_login/widgets/snackbar.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({Key key}) : super(key: key);
+  const SignUp({required Key key}) : super(key: key);
 
   @override
   _SignUpState createState() => _SignUpState();

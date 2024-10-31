@@ -5,7 +5,7 @@ import 'package:the_gorgeous_login/theme.dart';
 import 'package:the_gorgeous_login/utils/bubble_indicator_painter.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key key}) : super(key: key);
+  const LoginPage({required Key key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();

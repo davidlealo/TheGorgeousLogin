@@ -4,15 +4,15 @@ import 'package:the_gorgeous_login/theme.dart';
 import 'package:the_gorgeous_login/widgets/snackbar.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({Key key}) : super(key: key);
+  const SignIn({required Key key}) : super(key: key);
 
   @override
   _SignInState createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
-  TextEditingController loginEmailController = TextEditingController();
-  TextEditingController loginPasswordController = TextEditingController();
+  final TextEditingController loginEmailController = TextEditingController();
+  final TextEditingController loginPasswordController = TextEditingController();
 
   final FocusNode focusNodeEmail = FocusNode();
   final FocusNode focusNodePassword = FocusNode();
@@ -23,6 +23,8 @@ class _SignInState extends State<SignIn> {
   void dispose() {
     focusNodeEmail.dispose();
     focusNodePassword.dispose();
+    loginEmailController.dispose();
+    loginPasswordController.dispose();
     super.dispose();
   }
 
@@ -41,7 +43,7 @@ class _SignInState extends State<SignIn> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: Container(
+                child: SizedBox(
                   width: 300.0,
                   height: 190.0,
                   child: Column(

@@ -1,28 +1,26 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:the_gorgeous_login/theme.dart';
 
 class BubbleIndicatorPainter extends CustomPainter {
-  BubbleIndicatorPainter(
-      {this.dxTarget = 125.0,
-      this.dxEntry = 25.0,
-      this.radius = 21.0,
-      this.dy = 25.0,
-      this.pageController})
-      : super(repaint: pageController) {
+  BubbleIndicatorPainter({
+    this.dxTarget = 125.0,
+    this.dxEntry = 25.0,
+    this.radius = 21.0,
+    this.dy = 25.0,
+    required this.pageController,  // Indicar que es requerido
+  }) : super(repaint: pageController) {
     painter = Paint()
       ..color = CustomTheme.white
       ..style = PaintingStyle.fill;
   }
 
-  Paint painter;
+  late final Paint painter;  // Inicializado en el constructor
   final double dxTarget;
   final double dxEntry;
   final double radius;
   final double dy;
-
-  final PageController pageController;
+  final PageController pageController;  // Ahora es requerido
 
   @override
   void paint(Canvas canvas, Size size) {

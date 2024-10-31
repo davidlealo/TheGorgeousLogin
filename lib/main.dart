@@ -15,10 +15,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(  // Quitamos `const` para pasar el `key`
       debugShowCheckedModeBanner: false,
       title: 'TheGorgeousLogin',
-      home: LoginPage(),
+      home: LoginPage(key: UniqueKey()), // Añadimos el parámetro `key`
     );
   }
 }
